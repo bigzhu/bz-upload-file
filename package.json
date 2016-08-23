@@ -1,6 +1,6 @@
 {
   "name": "bz-upload-file",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "bz-upload-file",
   "main": "dist/main.js",
   "keywords": [
