@@ -1,12 +1,6 @@
-<style>
-  .hide{
-    display: none
-  }
-</style>
-
 <template>
   <div @click="click" class="ui button"><slot></slot>
-    <input class="hide" type="file" @change="changeFile" :accept="accept"/>
+    <input type="file" @change="changeFile" :accept="accept" style="display: none"/>
   </div>
 </template>
 
