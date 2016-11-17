@@ -1,4 +1,4 @@
-<style lang=less>
+<style>
   .hide{
     display: none
   }
@@ -9,13 +9,9 @@
 </template>
 
 <script>
-  import toastr from 'toastr'
   import $ from 'jquery'
   export default {
     props: {
-      change_call_back: {
-        type: Function
-      },
       done_call_back: {
         type: Function
       },
@@ -35,17 +31,18 @@
         file_input: null
       }
     },
-    ready () {
-      this.file_input = $(this.$el)
+    mounted: function () {
+      this.$nextTick(function () {
+        this.file_input = $(this.$el)
+      })
     },
     methods: {
       changeFile: function (e) {
-        if (this.change_call_back) {
-          this.change_call_back(e)
-        }
+        this.$emit('change_file', e)
         this.uploadFile()
       },
       uploadFile: function () {
+        let self = this
         var fd, file
         fd = new window.FormData()
         file = this.file_input[0].files[0]
@@ -58,24 +55,15 @@
               data: fd,
               processData: false,
               contentType: false,
-              success: (
-                function (_this) {
-                  return function (data, status, response) {
-                    if (!data.success) {
-                      throw new Error(data.msg)
-                    } else {
-                      // toastr.info('保存成功')
-                      // _this.pre_img.attr('src', data.file_path)
-                      if (_this.done_call_back) {
-                        _this.done_call_back(data.file_path)
-                      }
-                    }
-                  }
+              success: function (data, status, response) {
+                if (!data.success) {
+                  throw new Error(data.msg)
+                } else {
+                  self.$emit('upload_done', data.file_path)
                 }
-              )(this),
+              },
               error: function (error_info) {
-                toastr.error(error_info)
-                // throw new Error(error_info)
+                throw new Error(error_info)
               }
             }
           )
