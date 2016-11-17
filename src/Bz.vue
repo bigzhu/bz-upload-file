@@ -5,7 +5,9 @@
 </style>
 
 <template>
-  <input class="image input" type="file" @change="changeFile" :accept="accept"/>
+  <div @click="click" class="ui button"><slot></slot>
+    <input class="hide" type="file" @change="changeFile" :accept="accept"/>
+  </div>
 </template>
 
 <script>
@@ -68,6 +70,9 @@
             }
           )
         }
+      },
+      click: function () {
+        $(this.$el).find('input').click()
       }
     },
     computed: {
