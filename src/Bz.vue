@@ -29,7 +29,7 @@
     },
     mounted: function () {
       this.$nextTick(function () {
-        this.file_input = $(this.$el)
+        this.file_input = $(this.$el).find('input')
       })
     },
     methods: {
