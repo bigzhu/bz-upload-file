@@ -1,5 +1,6 @@
 <template>
-  <div @click="click" class="ui button"><slot></slot>
+  <div @click="click" class="ui button">
+    <slot></slot>
     <input type="file" @change="changeFile" :accept="accept" style="display: none"/>
   </div>
 </template>
