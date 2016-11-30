@@ -1,12 +1,10 @@
-<<<<<<< HEAD
+
 <style>
   .hide{
     display: none
   }
 </style>
 
-=======
->>>>>>> e58bec4e99cc8a8461e598e877bfbc23c27c9624
 <template>
   <div @click="click" class="ui button">
     <slot></slot>

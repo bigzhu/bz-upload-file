@@ -1,14 +1,11 @@
 {
-<<<<<<< HEAD
   "name": "bz-base",
   "version": "2.0.0",
   "description": "bz-base",
-=======
   "name": "bz-upload-file",
   "version": "2.1.6",
   "description": "bz-upload-file",
->>>>>>> e58bec4e99cc8a8461e598e877bfbc23c27c9624
-  "main": "dist/main.js",
+  "main": "src/Bz.vue",
   "keywords": [
     "vue",
     "component",
@@ -24,17 +21,15 @@
   },
   "homepage": "https://github.com/bigzhu/bz-base#readme",
   "files": [
-    "dist"
+    "src/Bz.vue",
+    "src/assets"
   ],
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/pack.js",
     "test": ""
-<<<<<<< HEAD
   },
   "dependencies": {
-=======
->>>>>>> e58bec4e99cc8a8461e598e877bfbc23c27c9624
   },
   "dependencies": {},
   "devDependencies": {
