@@ -1,8 +1,11 @@
 {
+  "name": "bz-base",
+  "version": "2.0.0",
+  "description": "bz-base",
   "name": "bz-upload-file",
   "version": "2.1.6",
   "description": "bz-upload-file",
-  "main": "dist/main.js",
+  "main": "src/Bz.vue",
   "keywords": [
     "vue",
     "component",
@@ -11,19 +14,22 @@
   "author": "bigzhu <vermiliondun@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bigzhu/bz-upload-file.git"
+    "url": "git+https://github.com/bigzhu/bz-base.git"
   },
   "bugs": {
-    "url": "https://github.com/bigzhu/bz-upload-file/issues"
+    "url": "https://github.com/bigzhu/bz-base/issues"
   },
-  "homepage": "https://github.com/bigzhu/bz-upload-file#readme",
+  "homepage": "https://github.com/bigzhu/bz-base#readme",
   "files": [
-    "dist"
+    "src/Bz.vue",
+    "src/assets"
   ],
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/pack.js",
     "test": ""
+  },
+  "dependencies": {
   },
   "dependencies": {},
   "devDependencies": {
