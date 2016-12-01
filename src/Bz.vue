@@ -1,10 +1,3 @@
-
-<style>
-  .hide{
-    display: none
-  }
-</style>
-
 <template>
   <div @click="click" class="ui button">
     <slot></slot>
