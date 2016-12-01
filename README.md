@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 # bz-base
 
 > bz-base
-=======
-# bz-upload-file
-
-> bz-upload-file
->>>>>>> e58bec4e99cc8a8461e598e877bfbc23c27c9624
 
 ## Build Setup
 
