@@ -1,6 +1,6 @@
-# bz-base
+# bz-upload-file
 
-> bz-base
+> bz-upload-file
 
 ## Build Setup
 
