@@ -36,8 +36,8 @@
           {parm: 'upload_url', desc: "用哪个url来传，默认'/api_file_upload'"},
           {parm: 'accept', desc: '限定文件类型: audio/* video/* image/*'}
         ],
-        parm_desc: ``,
-        code: `<bz></bz>`
+        parm_desc: `如果取消了上传, 那么 e.target.files[0] 是 undefined, 注意处理`,
+        code: `<bz @change_file="change_call_back" accept="pdf/*" @upload_done="call_back">上传附件</bz>`
       }
     },
     methods: {
@@ -45,7 +45,9 @@
         window.alert(file_url)
       },
       change_call_back: function (e) {
-        window.alert(e.target.files[0].name)
+        if (e.target.files[0]) {
+          window.alert(e.target.files[0].name)
+        }
       }
     }
   }

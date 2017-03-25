@@ -39,31 +39,54 @@
         this.uploadFile()
       },
       uploadFile: function () {
-        let self = this
-        var fd, file
+        let file
+        let fd
         fd = new window.FormData()
+        let self = this
         file = this.file_input[0].files[0]
+        console.log(file)
         if (file) {
           fd.append('file', file)
-          return $.ajax(
-            {
-              url: this.upload_url,
-              type: 'POST',
-              data: fd,
-              processData: false,
-              contentType: false,
-              success: function (data, status, response) {
-                if (!data.success) {
-                  throw new Error(data.msg)
-                } else {
-                  self.$emit('upload_done', data.file_path)
-                }
-              },
-              error: function (error_info) {
-                throw new Error(error_info)
-              }
+          return window.fetch(this.upload_url, {
+            method: 'post',
+            body: fd
+          })
+          .then(function (response) {
+            if (response.status !== 200) {
+              throw new Error(response.url + ' ' + response.status + ' ' + response.statusText)
             }
-          )
+            return response.json()
+          })
+          .then(function (data) {
+            if (data.error !== '0') {
+              console.log(self.upload_url + ' error: ' + data.error)
+              throw new Error(data.error)
+            }
+            console.log(data)
+            return data
+          })
+          .catch(function (error) {
+            console.log('Request failed', error)
+          })
+          // return $.ajax(
+            //   {
+              //     url: this.upload_url,
+              //     type: 'POST',
+              //     data: fd,
+              //     processData: false,
+              //     contentType: false,
+              //     success: function (data, status, response) {
+                //       if (!data.success) {
+                  //         throw new Error(data.msg)
+                  //       } else {
+                    //         self.$emit('upload_done', data.file_path)
+                    //       }
+                    //     },
+                    //     error: function (error_info) {
+                      //       throw new Error(error_info)
+                      //     }
+                      //   }
+          // )
         }
       },
       click: function () {
