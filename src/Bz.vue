@@ -62,31 +62,12 @@
               console.log(self.upload_url + ' error: ' + data.error)
               throw new Error(data.error)
             }
-            console.log(data)
+            self.$emit('upload_done', data.file_path)
             return data
           })
           .catch(function (error) {
             console.log('Request failed', error)
           })
-          // return $.ajax(
-            //   {
-              //     url: this.upload_url,
-              //     type: 'POST',
-              //     data: fd,
-              //     processData: false,
-              //     contentType: false,
-              //     success: function (data, status, response) {
-                //       if (!data.success) {
-                  //         throw new Error(data.msg)
-                  //       } else {
-                    //         self.$emit('upload_done', data.file_path)
-                    //       }
-                    //     },
-                    //     error: function (error_info) {
-                      //       throw new Error(error_info)
-                      //     }
-                      //   }
-          // )
         }
       },
       click: function () {
