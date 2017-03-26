@@ -1,6 +1,6 @@
 {
   "name": "bz-upload-file",
-  "version": "2.1.11",
+  "version": "2.1.12",
   "description": "bz-upload-file",
   "main": "src/Bz.vue",
   "keywords": [
