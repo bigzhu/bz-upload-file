@@ -62,7 +62,7 @@
               console.log(self.upload_url + ' error: ' + data.error)
               throw new Error(data.error)
             }
-            self.$emit('upload_done', data.file_path)
+            self.$emit('upload_done', data.file_path, file.name)
             return data
           })
           .catch(function (error) {
