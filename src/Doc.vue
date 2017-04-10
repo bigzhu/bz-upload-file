@@ -6,7 +6,7 @@
       :parms="parms"
       :code="code"
       >
-      <bz @change_file="change_call_back" accept="pdf/*" @upload_done="call_back">上传附件</bz>
+      <bz @change_file="change_call_back" accept="image/png, image/jpeg, image/gif" @upload_done="call_back">上传附件</bz>
     </doc>
   </div>
 </template>
